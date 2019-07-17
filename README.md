@@ -1,7 +1,7 @@
 # OpenSSL Cheat Sheet
 Cheat sheet of useful commands for OpenSSL
 
-
+## Certificates
 
 Generate Private Key
 ```
@@ -84,4 +84,17 @@ openssl pkcs12 -export -in certificate.cer -inkey private.key -out certificate.p
 Create Self Signed Certificate
 ```
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+```
+
+
+## Encryption
+Encrypt a file
+```
+openssl aes-256-cbc -a -in secrets.txt -out secrets.txt.enc
+```
+
+
+Decrrypt a file
+```
+openssl aes-256-cbc -d -a -in secrets.txt.enc -out secrets.txt.new
 ```
