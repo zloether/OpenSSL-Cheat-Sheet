@@ -79,3 +79,9 @@ Create PFX from CER and KEY
 ```
 openssl pkcs12 -export -in certificate.cer -inkey private.key -out certificate.pfx -certfile CACert.cer
 ```
+
+
+Create Self Signed Certificate
+```
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+```
