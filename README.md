@@ -98,8 +98,22 @@ Encrypt a file
 openssl aes-256-cbc -a -in secrets.txt -out secrets.txt.enc
 ```
 
-
-Decrrypt a file
+Decrypt a file
 ```
-openssl aes-256-cbc -d -a -in secrets.txt.enc -out secrets.txt.new
+openssl aes-256-cbc -d -a -in secrets.txt.enc -out secrets.txt
+```
+
+Generate Random Key for Encryption
+```
+openssl rand -hex -out key.bin 64
+```
+
+Encrypt a file using public key
+```
+openssl rsautl -encryt -inkey publickey.pem -pubin -in key.bin -out key.bin.enc
+```
+
+Decrypt a file using a private key
+```
+openssl rsautl -decrypt -inkey private.key -in key.bin.enc -out key.bin
 ```
