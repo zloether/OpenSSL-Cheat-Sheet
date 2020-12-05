@@ -122,3 +122,8 @@ Decrypt a file using a private key
 openssl rsautl -decrypt -inkey private.key -in key.bin.enc -out key.bin
 ```
 
+
+## Interact with Servers
+Download entire certificate chain from remote server
+```
+openssl s_client -showcerts server:port
