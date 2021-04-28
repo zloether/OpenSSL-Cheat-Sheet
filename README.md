@@ -127,3 +127,12 @@ openssl rsautl -decrypt -inkey private.key -in key.bin.enc -out key.bin
 Download entire certificate chain from remote server
 ```
 openssl s_client -showcerts server:port
+```
+
+
+## OpenSSH
+Convert RSA private key from OpenSSH to PEM format
+```
+ssh-keygen -p -m PEM -f ~/.ssh/id_rsa
+```
+
