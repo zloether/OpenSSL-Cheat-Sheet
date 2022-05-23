@@ -77,7 +77,7 @@ openssl x509 -outform der -in certificate.pem -out certificate.cer
 
 Create PFX from CER and KEY
 ```
-openssl pkcs12 -export -in certificate.cer -inkey private.key -out certificate.pfx -certfile CACert.cer
+openssl pkcs12 -export -in certificate.cer -inkey private.key -out certificate.pfx -certfile CACert.cer [-legacy]
 ```
 
 
