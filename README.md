@@ -86,9 +86,16 @@ Create Self Signed Certificate
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
 ```
 
+
 Create Certificate from CSR and KEY
 ```
 openssl req -x509 -key private.key -in server.csr -out cert.pem -days 365 -nodes
+```
+
+
+Create certificate using CA
+```
+openssl x509 -req -days 360 -in server.csr -CA cacert.pem -CAkey cakey.pem -CAcreateserial -out server.crt -sha256
 ```
 
 
