@@ -98,7 +98,6 @@ Create certificate using CA
 openssl x509 -req -days 360 -in server.csr -CA cacert.pem -CAkey cakey.pem -CAcreateserial -out server.crt -sha256
 ```
 
-
 ## Encryption
 Encrypt a file
 ```
